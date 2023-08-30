@@ -8,6 +8,14 @@ from pyspark.sql.functions import regexp_replace
 @dlt.table
 @dlt.expect("No null links", "link is not null")
 def medium_raw():
+    """
+    Reads the raw Medium posts data from a CSV file and returns a Spark DataFrame.
+
+    Returns:
+    --------
+    spark.DataFrame:
+        A DataFrame containing the raw Medium posts data.
+    """
     csv_path = "dbfs:/data-asset-bundles-dais2023/fe_medium_posts_raw.csv"
     return spark.read.csv(csv_path, header=True)
 
@@ -15,6 +23,6 @@ def medium_raw():
 @dlt.table
 def medium_clean():
     df: DataFrame = dlt.read("medium_raw")
-    df = df.filter(df.link != 'null')
+    df = df.filter(df.link != "null")
     df = df.withColumn("author", regexp_replace("author", "\\([^()]*\\)", ""))
     return df
