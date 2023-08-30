@@ -9,7 +9,7 @@
 
 from pyspark.sql.functions import desc
 
-dbutils.widgets.text("dbname", "robkisk")
+dbutils.widgets.text("dbname", "")
 
 # COMMAND ----------
 
