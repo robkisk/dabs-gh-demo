@@ -5,6 +5,8 @@ from pyspark.sql.functions import desc, pandas_udf
 import pandas as pd
 import requests
 
+# test deploy from gha workflow
+
 @dlt.table
 def medium_metrics():
     df: DataFrame = dlt.read("medium_clean")
