@@ -9,7 +9,19 @@ import requests
 
 
 @dlt.table
-def medium_metrics():
+from pyspark.sql import DataFrame
+from pyspark.sql.functions import desc
+import databricks.koalas as dlt
+
+def medium_metrics() -> DataFrame:
+    """
+    Reads in a cleaned DataFrame of Medium articles, groups by link, and applies the get_metrics function to calculate
+    the number of claps and reading time for each article. The resulting DataFrame is joined with the original data and
+    sorted by number of claps in descending order.
+
+    Returns: finalDF (DataFrame): DataFrame containing the original data joined with the calculated metrics, sorted by
+    number of claps in descending order.
+    """
     df: DataFrame = dlt.read("medium_clean")
 
     metricsDF = df.groupby("link").applyInPandas(
