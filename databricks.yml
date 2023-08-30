@@ -37,11 +37,11 @@ resources:
             base_parameters:
               dbname: "medium_post_report_${bundle.environment}"
             notebook_path: ./fe_medium_report.py
-          existing_cluster_id: 0829-231058-n27m9s6i
-          # new_cluster:
-          #   spark_version: 13.1.x-scala2.12
-          #   num_workers: 1
-            # node_type_id: i3.xlarge            
+          # existing_cluster_id: 0829-231058-n27m9s6i
+          new_cluster:
+            spark_version: 13.1.x-scala2.12
+            num_workers: 1
+            node_type_id: i3.xlarge            
 
             # spark_version: 13.2.x-scala2.12
             # instance_pool_id: 0707-191523-rinks20-pool-dcu0dxv7
