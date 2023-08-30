@@ -52,7 +52,7 @@ environments:
 
   qa: # This environment is when deploying test runs from a pull request on GitHub.
     workspace:
-      host: https://e2-dogfood.staging.cloud.databricks.com/
+      host: https://e2-demo-field-eng.cloud.databricks.com/
     resources:
       pipelines:
         medium_metrics_pipeline:
@@ -63,7 +63,7 @@ environments:
 
   production:
     workspace:
-      host: https://e2-dogfood.staging.cloud.databricks.com/
+      host: https://e2-demo-field-eng.cloud.databricks.com/
     resources:
       pipelines:
         medium_metrics_pipeline:
