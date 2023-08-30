@@ -10,6 +10,13 @@ import requests
 
 @dlt.table
 def medium_metrics():
+    """
+    Reads in a DataFrame of cleaned Medium data, groups the data by link and applies a function to get metrics, joins
+    the resulting metrics DataFrame with the original data, and sorts by number of claps in descending order.
+
+    Returns: finalDF (DataFrame): A DataFrame of Medium data with added metrics, sorted by number of claps in descending
+    order.
+    """
     df: DataFrame = dlt.read("medium_clean")
 
     metricsDF = df.groupby("link").applyInPandas(
