@@ -37,10 +37,21 @@ resources:
             base_parameters:
               dbname: "medium_post_report_${bundle.environment}"
             notebook_path: ./fe_medium_report.py
-          new_cluster:
-            spark_version: 13.1.x-scala2.12
-            num_workers: 1
-            node_type_id: i3.xlarge            
+          existing_cluster_id: 0829-231058-n27m9s6i
+          # new_cluster:
+          #   spark_version: 13.1.x-scala2.12
+          #   num_workers: 1
+            # node_type_id: i3.xlarge            
+
+            # spark_version: 13.2.x-scala2.12
+            # instance_pool_id: 0707-191523-rinks20-pool-dcu0dxv7
+            # policy_id: D062DA0F3700032A
+            # driver_instance_pool_id: 0707-191523-rinks20-pool-dcu0dxv7
+            # data_security_mode: SINGLE_USER
+            # runtime_engine: PHOTON
+            # autoscale:
+            #     min_workers: 2
+            #     max_workers: 10
 
 environments:
   development:
