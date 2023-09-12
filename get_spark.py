@@ -20,6 +20,7 @@ class GetSpark:
         profile (str): The profile to use for the Databricks Connect SDK. Defaults to "default".
     """
 
+    # adding a new piece of code
     def __init__(self, profile: str = "default"):
         """
         The constructor for GetSpark class.
